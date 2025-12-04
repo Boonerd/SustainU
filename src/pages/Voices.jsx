@@ -1,4 +1,4 @@
-import { EcoLeafIcon, FootprintIcon } from "../components/icons/SustainIcons";
+import { LeafIcon, FootprintIcon } from "../components/icons/SustainIcons";
 
 export default function Voices() {
   return (
@@ -19,7 +19,7 @@ export default function Voices() {
             className="bg-white dark:bg-darkcard rounded-3xl overflow-hidden border border-cardborder dark:border-darkborder hover:shadow-2xl transition"
           >
             <div className="bg-gradient-to-br from-deepgreen/20 to-midgreen/20 h-48 flex items-center justify-center">
-              <EcoLeafIcon className="w-20 h-20 text-deepgreen dark:text-lightgreen opacity-50" />
+              <LeafIcon className="w-20 h-20 text-deepgreen dark:text-lightgreen opacity-50" />
             </div>
             <div className="p-8">
               <h3 className="text-2xl font-bold text-deepgreen dark:text-lightgreen mb-3">
@@ -30,7 +30,7 @@ export default function Voices() {
               </p>
               <div className="flex gap-3 mt-6">
                 <FootprintIcon className="w-10 h-10 text-midgreen" />
-                <EcoLeafIcon className="w-10 h-10 text-deepgreen" />
+                <LeafIcon className="w-10 h-10 text-deepgreen" />
               </div>
             </div>
           </div>
