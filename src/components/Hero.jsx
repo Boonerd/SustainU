@@ -4,7 +4,7 @@ import { LeafIcon } from "./icons/SustainIcons";
 
 export default function Hero({ goToPage }) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 bg-bg">
+    <section className="relative min-h-screen flex items-center justify-center px-6 bg-bg pt-32 md:pt-40">
       {/* Subtle background leaf — now visible in light mode too */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <LeafIcon className="w-full h-full text-deep" />
