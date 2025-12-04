@@ -9,6 +9,7 @@ export default function Navbar({ currentPage, goToPage, darkMode, setDarkMode })
     { name: "The Voices", id: "voices" },
     { name: "The Data", id: "data" },
     { name: "Act Now", id: "actnow" },
+    {name: "Calculator", id: "calculator"},
   ];
 
   return (

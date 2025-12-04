@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Voices from "./pages/Voices";
 import Data from "./pages/Data";
 import ActNow from "./pages/ActNow";
+import Calculator from "./pages/Calculator";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState("home");
@@ -35,6 +36,7 @@ export default function App() {
         {currentPage === "voices" && <Voices />}
         {currentPage === "data" && <Data />}
         {currentPage === "actnow" && <ActNow />}
+        {currentPage === "calculator" && <Calculator goToPage={goToPage} />}
       </main>
     </div>
   );
