@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------
+   BASE THEME VARIABLES (LIGHT MODE DEFAULT)
+-------------------------------------------*/
+@layer base {
+  :root {
+    /* Light mode colors */
+    --bg: #fafaf5;              /* Soft cream background */
+    --surface: #ffffff;         /* Card surfaces */
+    --text-primary: #1a1a1a;    /* Main text */
+    --text-muted: #6b6b6b;      /* Subtle text */
+    --border: #e5e5df;
+
+    /* Sustainability palette */
+    --deep-green: #2f6b3e;
+    --mid-green: #7dc48f;
+    --light-green: #9fe47b;
+
+    /* Accent earth tones */
+    --earth: #ddaa66;
+  }
+
+  /* ------------------------------------------
+     DARK MODE OVERRIDES
+  -------------------------------------------*/
+  .dark {
+    --bg: #0e0f0e;              /* Deep charcoal */
+    --surface: #1a1c1a;         /* Card backgrounds */
+    --text-primary: #ffffff;    /* Strong readable white text */
+    --text-muted: #b8c2b8;      /* Soft muted text */
+    --border: #2a2d2a;
+
+    /* Sustainability palette for dark UI */
+    --deep-green: #9fe47b;      /* Bright eco green */
+    --mid-green: #7dc48f;
+    --light-green: #66a376;
+
+    --earth: #cfa06e;
+  }
+
+  /* Global application of theme variables */
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* ------------------------------------------
+   OPTIONAL: UTILITY CLASSES USING VARIABLES
+-------------------------------------------*/
+@layer utilities {
+  .bg-surface {
+    background-color: var(--surface);
+  }
+
+  .text-muted {
+    color: var(--text-muted);
+  }
+
+  .border-theme {
+    border-color: var(--border);
+  }
+
+  .btn-primary {
+    background-color: var(--deep-green);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--mid-green);
+  }
+}
