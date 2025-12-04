@@ -2,75 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ------------------------------------------
-   BASE THEME VARIABLES (LIGHT MODE DEFAULT)
--------------------------------------------*/
 @layer base {
   :root {
-    /* Light mode colors */
-    --bg: #fafaf5;              /* Soft cream background */
-    --surface: #ffffff;         /* Card surfaces */
-    --text-primary: #1a1a1a;    /* Main text */
-    --text-muted: #6b6b6b;      /* Subtle text */
-    --border: #e5e5df;
+    /* LIGHT MODE — Warm, Natural, Easy on Eyes */
+    --bg: #faf9f6;           /* Soft warm cream (less yellow than before) */
+    --surface: #ffffff;      /* Pure white for cards (better contrast) */
+    --text-primary: #2d3436; /* Softer black (not pure black - easier to read) */
+    --text-muted: #636e72;   /* Medium gray (better readability) */
+    --border: #dfe6e9;       /* Light cool gray border */
 
-    /* Sustainability palette */
-    --deep-green: #2f6b3e;
-    --mid-green: #7dc48f;
-    --light-green: #9fe47b;
-
-    /* Accent earth tones */
-    --earth: #ddaa66;
+    /* Green palette - vibrant but not harsh */
+    --deep-green: #2d6a4f;   /* Forest green - rich and natural */
+    --mid-green: #52b788;    /* Fresh leaf green */
+    --light-green: #95d5b2;  /* Soft mint accent */
+    --earth: #d4a574;        /* Warm terracotta */
+    --accent: #f4a261;       /* Soft orange for CTAs */
   }
 
-  /* ------------------------------------------
-     DARK MODE OVERRIDES
-  -------------------------------------------*/
   .dark {
-    --bg: #0e0f0e;              /* Deep charcoal */
-    --surface: #1a1c1a;         /* Card backgrounds */
-    --text-primary: #ffffff;    /* Strong readable white text */
-    --text-muted: #b8c2b8;      /* Soft muted text */
-    --border: #2a2d2a;
+    /* DARK MODE — Deep, Comfortable, No Eye Strain */
+    --bg: #0f1419;           /* Very dark blue-gray (not pure black) */
+    --surface: #1a1f2e;      /* Slightly lighter surface (better depth) */
+    --text-primary: #e8eaed; /* Soft white (not pure white - easier on eyes) */
+    --text-muted: #9ca3af;   /* Muted gray (better contrast than before) */
+    --border: #2d3748;       /* Subtle border */
 
-    /* Sustainability palette for dark UI */
-    --deep-green: #9fe47b;      /* Bright eco green */
-    --mid-green: #7dc48f;
-    --light-green: #66a376;
-
-    --earth: #cfa06e;
+    /* Dark mode greens - softer, less neon */
+    --deep-green: #7fcd91;   /* Soft bright green */
+    --mid-green: #52b788;    /* Medium fresh green */
+    --light-green: #95d5b2;  /* Light mint */
+    --earth: #e0a96d;        /* Warm gold */
+    --accent: #f4a261;       /* Warm orange accent */
   }
 
-  /* Global application of theme variables */
   body {
-    background-color: var(--bg);
-    color: var(--text-primary);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    @apply bg-bg text-text transition-colors duration-300;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  /* Smooth transitions for theme switching */
+  * {
+    transition-property: background-color, border-color, color;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
   }
 }
 
-/* ------------------------------------------
-   OPTIONAL: UTILITY CLASSES USING VARIABLES
--------------------------------------------*/
+/* Custom scrollbar for both modes */
 @layer utilities {
-  .bg-surface {
-    background-color: var(--surface);
+  ::-webkit-scrollbar {
+    width: 12px;
   }
 
-  .text-muted {
-    color: var(--text-muted);
+  ::-webkit-scrollbar-track {
+    @apply bg-bg;
   }
 
-  .border-theme {
-    border-color: var(--border);
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-lg;
   }
 
-  .btn-primary {
-    background-color: var(--deep-green);
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-text-muted;
+  }
+
+  /* Selection colors */
+  ::selection {
+    background-color: var(--mid-green);
     color: white;
   }
 
-  .btn-primary:hover {
-    background-color: var(--mid-green);
+  .dark ::selection {
+    background-color: var(--deep-green);
+    color: var(--bg);
   }
 }
