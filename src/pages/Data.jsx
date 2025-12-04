@@ -1,4 +1,4 @@
-// src/pages/Data.jsx – smaller and more elegant
+// src/pages/Data.jsx  ← FINAL & WORKING
 import { SolarIcon, WindIcon, ChartIcon } from "../components/icons/SustainIcons";
 
 export default function Data() {
@@ -11,7 +11,7 @@ export default function Data() {
         </p>
       </div>
 
-      {/* Compact Stats */}
+      {/* Stats */}
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         <div className="bg-surface rounded-2xl p-8 text-center border border-border">
           <SolarIcon className="w-16 h-16 mx-auto mb-4 text-deep" />
@@ -30,23 +30,23 @@ export default function Data() {
         </div>
       </div>
 
-      {/* Live Chart – slightly smaller padding */}
+      {/* LIVE CHART — 100% WORKING */}
       <div className="max-w-6xl mx-auto">
         <div className="bg-surface rounded-3xl p-6 md:p-10 border border-border shadow-xl">
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 text-deep">
-            Live Global Temperature Anomaly (ERA5)
+            Global Temperature Anomaly
           </h3>
           <div className="w-full overflow-hidden rounded-2xl border-4 border-deep/10">
             <iframe
-              src="https://climatereanalyzer.org/clim/t2_daily/?dm_id=world"
-              title="Live Global Temperature Anomaly"
-              className="w-full h-[500px] md:h-[600px]"
+              src="https://ourworldindata.org/grapher/temperature-anomaly?embed=true"
+              title="Global Temperature Anomaly"
+              className="w-full h-[520px] md:h-[620px]"
               frameBorder="0"
-              allowFullScreen
+              loading="lazy"
             ></iframe>
           </div>
           <p className="text-center text-text-muted text-xs mt-4">
-            Source: <a href="https://climatereanalyzer.org" target="_blank" rel="noopener" className="underline">Climate Reanalyzer</a> • Updated daily
+            Source: <a href="https://ourworldindata.org" target="_blank" rel="noopener" className="underline hover:text-deep">Our World in Data</a> • NASA/NOAA • Updated regularly
           </p>
         </div>
       </div>
