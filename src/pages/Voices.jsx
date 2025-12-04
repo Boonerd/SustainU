@@ -1,4 +1,4 @@
-// src/pages/Voices.jsx
+// src/pages/Voices.jsx  ← FINAL, SMALLER & GORGEOUS VERSION
 import { SolarIcon, TreeIcon, FootprintIcon } from "../components/icons/SustainIcons";
 
 export default function Voices() {
@@ -24,33 +24,40 @@ export default function Voices() {
   ];
 
   return (
-    <div className="min-h-screen bg-bg px-6 py-32">
-      <div className="text-center mb-20">
-        <h1 className="text-6xl md:text-8xl font-black text-deep mb-6">The Voices</h1>
-        <p className="text-xl md:text-2xl text-text-muted max-w-4xl mx-auto">
+    <div className="min-h-screen bg-bg px-6 py-20">
+      {/* Tighter header */}
+      <div className="text-center mb-14">
+        <h1 className="text-5xl md:text-7xl font-black text-deep mb-4">The Voices</h1>
+        <p className="text-lg md:text-xl text-text-muted max-w-2xl mx-auto">
           Hear directly from the people fighting for our future.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+      {/* Smaller, tighter, more elegant cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {videos.map((video, i) => (
           <div
             key={i}
-            className="bg-surface rounded-3xl overflow-hidden border border-border shadow-2xl hover:shadow-3xl transition-all hover:-translate-y-3"
+            className="bg-surface rounded-2xl overflow-hidden border border-border shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
           >
-            <div className="relative pb-[56.25%]">
+            {/* Slightly smaller video (still perfect 16:9) */}
+            <div className="relative pb-[56.25%] bg-black">
               <iframe
                 className="absolute inset-0 w-full h-full"
                 src={video.url}
                 title={video.title}
                 allowFullScreen
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                loading="lazy"
               ></iframe>
             </div>
 
-            <div className="p-10 text-center">
-              <video.icon className={`w-20 h-20 mx-auto mb-6 ${video.color}`} />
-              <h3 className="text-2xl font-bold text-deep mb-3">{video.title}</h3>
+            {/* Compact footer */}
+            <div className="p-6 text-center">
+              <video.icon className={`w-14 h-14 mx-auto mb-3 ${video.color}`} />
+              <h3 className="text-lg font-bold text-deep leading-tight">
+                {video.title}
+              </h3>
             </div>
           </div>
         ))}
